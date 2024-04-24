@@ -26,9 +26,20 @@ const MiPagina = () => {
 
   return (
     <>
+      <div>
+        <Head>
+          <title>Based Soldiers</title>
+        </Head>
+      </div>
       {showSplash && (
         <div className="splash" onClick={() => setShowSplash(false)}>
-          <img className="splash-header" src="/BasedSoldiersLogo.png" alt="splashscreen" width="1000rem" height="1000rem"/>
+          <Image
+            className="splash-header"
+            src="/BasedSoldiersLogo.png"
+            alt="splashscreen"
+            width={1000}
+            height={1000}
+           />
         </div>
       )}
       <div className={showSplash ? 'hidden-content' : ''}>
@@ -47,17 +58,32 @@ const MiPagina = () => {
               <div className="optionSelectorUI">
                 <div className="optionHome">
                   <button id="homeOption">About
-                    <img src="images/home.png" alt="Home" width="200rem" height="200rem"/>
+                    <Image 
+                        src="/images/home.png" 
+                        alt="Home" 
+                        width={200} 
+                        height={200}
+                      />
                   </button>
                 </div>
                 <div className="optionMint">
                   <button id="mintOption">Mint
-                    <img src="images/mint.png" alt="Mint" width="200rem" height="200rem"/>
+                    <Image 
+                      src="/images/mint.png" 
+                      alt="Mint" 
+                      width={200} 
+                      height={200}
+                    />
                   </button>
                 </div>
                 <div className="optionRoadmap">
                   <button id="roadmapOption">Roadmap
-                    <img src="images/roadmap.png" alt="Roadmap" width="200rem" height="200rem"/>
+                    <Image 
+                      src="/images/roadmap.png" 
+                      alt="Roadmap" 
+                      width={200} 
+                      height={200}
+                    />
                   </button>
                 </div>
               </div>
