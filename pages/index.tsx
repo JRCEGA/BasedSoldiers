@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { useEffect, useState } from 'react';
 import { Inter } from "next/font/google";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
