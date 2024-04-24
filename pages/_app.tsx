@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import '@rainbow-me/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import {
   RainbowKitProvider,
@@ -49,6 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider modalSize="compact" theme={darkTheme()} locale={locale}>
           <Component {...pageProps} />
+          <SpeedInsights />
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
