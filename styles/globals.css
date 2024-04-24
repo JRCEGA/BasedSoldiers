@@ -1,4 +1,4 @@
-:root {
+/*:root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -104,4 +104,295 @@ a {
   html {
     color-scheme: dark;
   }
+}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+  }
 }
+
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+
+@keyframes cambioFondo {
+    0% { background-image: url("/images/FONDO1.png"); }
+    25% { background-image: url("/images/FONDO2.png"); }
+    50% { background-image: url("/images/FONDO3.png"); }
+    75% { background-image: url("/images/FONDO4.png"); }
+    100% { background-image: url("/images/FONDO1.png"); }
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Pixelify Sans';
+    margin: 0;
+    padding: 0;
+}
+
+.splash {
+  animation: fadeIn 1.5s ease-out forwards;
+  cursor : pointer;
+  position : fixed;
+  top : 50%;
+  left : 50%;
+  transform : translate(-50%,-50%);    
+  transition : all ease-in-out 600ms;
+  z-index: 9999;
+}
+
+.hidden-content{
+  transition : 0.5s;
+  display : none;
+}
+
+.splash-header {
+  display : flex;
+  justify-content: center;
+  align-items : center;
+}
+
+.introScreen {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  position: fixed;
+  inset: 0;
+  width: 50%;
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: contain; /* Asegura que la imagen se ajuste al contenedor sin cortarse */
+  z-index: 99;
+  transition: opacity 1s ease-out;
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s 1s, opacity 1s ease-out;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.mainHeader {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-bottom-left-radius: 15px; /* Ajusta el valor a lo que necesites */
+  border-bottom-right-radius: 15px; /* Ajusta el valor a lo que necesites */
+}
+
+.mainHeader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-bottom: solid 3px transparent;
+  /* Crear el gradiente para los bordes superior e inferior */
+  border-image: linear-gradient(to right, transparent, white, transparent) 1 stretch;
+  /* Asegurarse de que el pseudo-elemento se estire adecuadamente */
+  box-sizing: border-box;
+}
+
+#mainHeaderTitle {
+  color: rgb(255, 255, 255);
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh; /* Esto es para asegurarse de que el contenido mínimo llene la pantalla completa */
+  padding: 0;
+  background-image: url("/images/FONDO1.png");
+  background-size: cover;
+  overflow-x: hidden;
+  animation-name: cambioFondo;
+  animation-duration: 10s; /* Duración total de la animación */
+  animation-fill-mode: forwards; /* Se queda en la última imagen */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.793);
+    z-index: -1;
+}
+
+.mainMenuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  padding: 25px;
+  font-size: x-large;
+  border-radius: 25px;
+  width: 150rem;
+  height: 70rem;
+}
+
+.optionsUI {
+    display: flex;
+    flex-direction: row;
+    gap: 3.5rem;
+    width: 125rem;
+    height: 60rem;
+    /*border: 3px solid rgb(255, 255, 255);*/
+}
+
+#separationBar {
+  border: 1px dashed white;
+}
+
+.contentScreen {
+  padding: 50px;
+  width: 105rem;
+  background: rgba( 255, 255, 255, 0.1 );
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur( 7.5px );
+  -webkit-backdrop-filter: blur( 7.5px );
+  border-radius: 25px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#introOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.optionSelectorUI {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  gap: 50px;
+  background: rgba( 255, 255, 255, 0.1 );
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur( 7.5px );
+  -webkit-backdrop-filter: blur( 7.5px );
+  border-radius: 25px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#homeOption {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Alinea los elementos horizontalmente en el centro */
+  justify-content: center; /* Centra los elementos verticalmente */
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: x-large;
+  text-align: center; /* Asegura que el texto también esté centrado */
+  padding: 10px; /* Agrega algo de padding si es necesario */
+}
+
+#mintOption {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Alinea los elementos horizontalmente en el centro */
+  justify-content: center; /* Centra los elementos verticalmente */
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: x-large;
+  text-align: center; /* Asegura que el texto también esté centrado */
+  padding: 10px; /* Agrega algo de padding si es necesario */
+}
+
+#roadmapOption {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Alinea los elementos horizontalmente en el centro */
+  justify-content: center; /* Centra los elementos verticalmente */
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: x-large;
+  text-align: center; /* Asegura que el texto también esté centrado */
+  padding: 10px; /* Agrega algo de padding si es necesario */
+}
+
+.mainFooter {
+  font-size: x-small;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 15px; /* Ajusta el relleno según sea necesario */
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  align-items: center;
+}
+
+.mainFooter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-top: solid 1px transparent;
+  /* Crear el gradiente para los bordes superior e inferior */
+  border-image: linear-gradient(to right, transparent, white, transparent) 1 stretch;
+  /* Asegurarse de que el pseudo-elemento se estire adecuadamente */
+  box-sizing: border-box;
+}
+
+/*#socialIcons {
+    font-size: large;
+    text-align: right;
+}
+
+.icon {
+    color: white;
+    margin-left: 10px;
+}*/
