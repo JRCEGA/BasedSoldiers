@@ -2,36 +2,33 @@ import Head from "next/head";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react';
-import { Inter } from "next/font/google";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
+import dynamic from 'next/dynamic';
 
 const MiPagina = () => {
   const [showSplash, setShowSplash] = useState(true);
 
+  // Función para ocultar el splash screen
+  const hideSplashScreen = () => setShowSplash(false);
+
   useEffect(() => {
     // Configurar el temporizador para ocultar el splash screen después de un tiempo
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 5000); // Ajusta el tiempo como prefieras
-
-    // Añadir un efecto de transición suave para el splash screen
-    // Podrías añadir esto a tu archivo CSS:
-    // .splash { transition: opacity 1s ease-in-out; }
+    let timer = setTimeout(hideSplashScreen, 5000);
 
     return () => {
-      clearTimeout(timer); // Limpia el temporizador si el componente se desmonta
+      // Limpia el temporizador si el componente se desmonta
+      clearTimeout(timer);
     };
   }, []);
 
   return (
     <>
-      <div>
-        <Head>
-          <title>Based Soldiers</title>
-        </Head>
-      </div>
-      {showSplash && (
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Based Soldiers</title>
+      </Head>
+      {showSplash ? (
         <div className="splash" onClick={() => setShowSplash(false)}>
           <Image
             className="splash-header"
@@ -39,9 +36,10 @@ const MiPagina = () => {
             alt="splashscreen"
             width={1000}
             height={1000}
+            priority
            />
         </div>
-      )}
+      ) : (
       <div className={showSplash ? 'hidden-content' : ''}>
         <div className="mainHeader">
           <Link href="/">
@@ -63,6 +61,7 @@ const MiPagina = () => {
                         alt="Home" 
                         width={200} 
                         height={200}
+                        priority
                       />
                   </button>
                 </div>
@@ -73,6 +72,7 @@ const MiPagina = () => {
                       alt="Mint" 
                       width={200} 
                       height={200}
+                      priority
                     />
                   </button>
                 </div>
@@ -83,6 +83,7 @@ const MiPagina = () => {
                       alt="Roadmap" 
                       width={200} 
                       height={200}
+                      priority
                     />
                   </button>
                 </div>
@@ -108,10 +109,10 @@ const MiPagina = () => {
           </div>
         </div>
       </div>
-      {/* Los scripts pueden ser importados en el archivo _document.js o usando useEffect si se necesita cargar dinámicamente */}
+      )}
     </>
   );
 };
 
-export default MiPagina;
+export default dynamic (() => Promise.resolve(MiPagina), { ssr: false });
 
