@@ -32,9 +32,9 @@ const MiPagina = () => {
       )}
       <div className={showSplash ? 'hidden-content' : ''}>
         <div className="mainHeader">
-          <a href="/">
+          <Link href="/">
             <h1 id="mainHeaderTitle">Based Soldiers</h1>
-          </a>
+          </Link>
           <div className="walletConnectButton">
             <ConnectButton />
           </div>
