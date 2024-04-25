@@ -315,7 +315,7 @@ body {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-#optionSelectorButton {
+.optionSelectorButton {
   width: 100%;
   display: block;
   cursor: pointer;
@@ -384,3 +384,47 @@ body {
     color: white;
     margin-left: 10px;
 }*/
+
+@media only screen and (max-width: 1000px) {
+  .optionsUI {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .optionSelectorUI {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 25vw;
+    gap: 10px;
+    align-items: center;
+    padding: 25px;
+  }
+
+  .contentScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #menuPhrase {
+    text-align: center;
+    font-size: large;
+  }
+
+  .optionSelectorButton {
+    width: 90%; /* Un poco menos del 100% para tener en cuenta el padding/gap */
+    font-size: 1rem; /* Ajusta esto según la visibilidad en móviles */
+    padding: 0.5rem; /* Espaciado interno para los botones */
+    /* Otros estilos como color, fondo, etc. */
+  }
+
+  .optionSelectorUI img {
+  width: 100%;
+  height: auto; /* Mantiene la relación de aspecto */
+  display: block; /* Elimina el espacio extra debajo de la imagen */
+  }
+}
