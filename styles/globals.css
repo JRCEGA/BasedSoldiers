@@ -73,12 +73,6 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 html,
 body {
   max-width: 100vw;
@@ -252,8 +246,6 @@ body {
   animation-fill-mode: forwards; /* Se queda en la última imagen */
 }
 
-
-
 .mainMenuContainer {
   display: flex;
   flex-direction: column;
@@ -262,6 +254,8 @@ body {
   color: rgb(255, 255, 255);
   padding: 25px;
   font-size: x-large;
+  width: 100vw;
+  height: auto;
 }
 
 #menuPhrase {
@@ -274,7 +268,7 @@ body {
     flex-direction: row;
     gap: 3.5rem;
     width: 80vw;
-    height: 60rem;
+    height: auto;
     /*border: 3px solid rgb(255, 255, 255);*/
 }
 
@@ -315,46 +309,22 @@ body {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-#homeOption {
-  display: flex;
-  flex-direction: column; /* Coloca los elementos en una columna */
-  align-items: center; /* Alinea los elementos horizontalmente en el centro */
-  justify-content: center; /* Centra los elementos verticalmente */
+#optionSelectorButton {
+  width: 100%;
+  display: block;
   cursor: pointer;
   background: none;
   border: none;
   color: white;
   font-size: x-large;
-  text-align: center; /* Asegura que el texto también esté centrado */
-  padding: 10px; /* Agrega algo de padding si es necesario */
+  text-align: center;
+  padding: 0;
 }
 
-#mintOption {
-  display: flex;
-  flex-direction: column; /* Coloca los elementos en una columna */
-  align-items: center; /* Alinea los elementos horizontalmente en el centro */
-  justify-content: center; /* Centra los elementos verticalmente */
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: white;
-  font-size: x-large;
-  text-align: center; /* Asegura que el texto también esté centrado */
-  padding: 10px; /* Agrega algo de padding si es necesario */
-}
-
-#roadmapOption {
-  display: flex;
-  flex-direction: column; /* Coloca los elementos en una columna */
-  align-items: center; /* Alinea los elementos horizontalmente en el centro */
-  justify-content: center; /* Centra los elementos verticalmente */
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: white;
-  font-size: x-large;
-  text-align: center; /* Asegura que el texto también esté centrado */
-  padding: 10px; /* Agrega algo de padding si es necesario */
+.optionSelectorUI img {
+  width: 100%;
+  height: auto; /* Mantiene la relación de aspecto */
+  display: block; /* Elimina el espacio extra debajo de la imagen */
 }
 
 .mainFooter {
@@ -395,9 +365,7 @@ body {
   width: 100%;
   z-index: -1;
   border-top: solid 1px transparent;
-  /* Crear el gradiente para los bordes superior e inferior */
   border-image: linear-gradient(to right, transparent, white, transparent) 1 stretch;
-  /* Asegurarse de que el pseudo-elemento se estire adecuadamente */
   box-sizing: border-box;
 }
 

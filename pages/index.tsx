@@ -59,7 +59,7 @@ const MiPagina = () => {
             <div className="optionsUI">
               <div className="optionSelectorUI">
                 <div className="optionHome">
-                  <button id="homeOption">About
+                  <button id="optionSelectorButton">About
                     <Image 
                         src="/images/home.png" 
                         alt="Home" 
@@ -71,7 +71,7 @@ const MiPagina = () => {
                   </button>
                 </div>
                 <div className="optionMint">
-                  <button id="mintOption">Mint
+                  <button id="optionSelectorButton">Mint
                     <Image 
                       src="/images/mint.png" 
                       alt="Mint" 
@@ -83,7 +83,7 @@ const MiPagina = () => {
                   </button>
                 </div>
                 <div className="optionRoadmap">
-                  <button id="roadmapOption">Roadmap
+                  <button id="optionSelectorButton">Roadmap
                     <Image 
                       src="/images/roadmap.png" 
                       alt="Roadmap" 
