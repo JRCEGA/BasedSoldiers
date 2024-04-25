@@ -14,6 +14,7 @@ const MiPagina = () => {
 
   useEffect(() => {
     // Configurar el temporizador para ocultar el splash screen después de un tiempo
+    setShowSplash(true)
     let timer = setTimeout(hideSplashScreen, 5000);
 
     return () => {
@@ -37,21 +38,24 @@ const MiPagina = () => {
             width={1000}
             height={1000}
             priority
+            placeholder="empty"
            />
         </div>
       ) : (
       <div className={showSplash ? 'hidden-content' : ''}>
         <div className="mainHeader">
-          <Link href="/">
-            <h1 id="mainHeaderTitle">Based Soldiers</h1>
-          </Link>
-          <div className="walletConnectButton">
-            <ConnectButton />
+          <div>
+            <div>
+              <h1 id="mainHeaderTitle">Based Soldiers</h1>
+            </div>
+            <div className="walletConnectButton">
+              <ConnectButton />
+            </div>
           </div>
         </div>
         <div className="mainMenuContainer">
           <div id="introOptions">
-            <h1>ARMY strong. BASED in bravery. Built by SOLDIERS.</h1>
+            <h1 id="menuPhrase">ARMY strong. BASED in bravery. Built by SOLDIERS.</h1>
             <div className="optionsUI">
               <div className="optionSelectorUI">
                 <div className="optionHome">
@@ -62,6 +66,7 @@ const MiPagina = () => {
                         width={200} 
                         height={200}
                         priority
+                        placeholder="empty"
                       />
                   </button>
                 </div>
@@ -73,6 +78,7 @@ const MiPagina = () => {
                       width={200} 
                       height={200}
                       priority
+                      placeholder="empty"
                     />
                   </button>
                 </div>
@@ -84,6 +90,7 @@ const MiPagina = () => {
                       width={200} 
                       height={200}
                       priority
+                      placeholder="empty"
                     />
                   </button>
                 </div>
@@ -96,16 +103,18 @@ const MiPagina = () => {
           </div>
         </div>
         <div className="mainFooter">
-          <div id="footerText">
-            <h1>Follow us on our social media</h1>
-          </div>
-          <div id="socialIcons">
-            <a href="https://twitter.com/BasedSoldiers" className="icon" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://discord.gg/3tP5wnCFC3" className="icon" target="_blank" rel="noopener noreferrer">
-              <i className="fa-brands fa-discord"></i>
-            </a>
+          <div>
+            <div id="footerText">
+              Follow us on our social media
+            </div>
+            <div id="socialIcons">
+              <a href="https://twitter.com/BasedSoldiers" className="icon" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-twitter"></i>
+              </a>
+              <a href="https://discord.gg/3tP5wnCFC3" className="icon" target="_blank" rel="noopener noreferrer">
+                <i className="fa-brands fa-discord"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -193,20 +193,24 @@ a{
 }
 
 .mainHeader {
-  position: fixed;
+  position: relative;
+  z-index: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 10;
-  padding: 15px;
-  padding-left: 25px;
-  padding-right: 25px;
-  border-bottom-left-radius: 15px; /* Ajusta el valor a lo que necesites */
-  border-bottom-right-radius: 15px; /* Ajusta el valor a lo que necesites */
+  height: 100px;
+  margin: 0;
+}
+
+.mainHeader>div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .mainHeader::after {
@@ -224,19 +228,22 @@ a{
   box-sizing: border-box;
 }
 
+.mainHeader div div {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.mainHeader div div h1 {
+  font-weight: 500;
+  font-size: 30px;
+}
+
 #mainHeaderTitle {
   color: rgb(255, 255, 255);
 }
 
-
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin: 0;
-  height: 100vh; /* Esto es para asegurarse de que el contenido mínimo llene la pantalla completa */
-  padding: 0;
   background-image: url("/images/FONDO1.png");
   background-size: cover;
   overflow-x: hidden;
@@ -245,16 +252,7 @@ body {
   animation-fill-mode: forwards; /* Se queda en la última imagen */
 }
 
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.793);
-    z-index: -1;
-}
+
 
 .mainMenuContainer {
   display: flex;
@@ -264,16 +262,18 @@ body::before {
   color: rgb(255, 255, 255);
   padding: 25px;
   font-size: x-large;
-  border-radius: 25px;
-  width: 150rem;
-  height: 70rem;
+}
+
+#menuPhrase {
+  font-weight: 500;
+  font-size: 2.5vw;
 }
 
 .optionsUI {
     display: flex;
     flex-direction: row;
     gap: 3.5rem;
-    width: 125rem;
+    width: 80vw;
     height: 60rem;
     /*border: 3px solid rgb(255, 255, 255);*/
 }
@@ -358,18 +358,32 @@ body::before {
 }
 
 .mainFooter {
-  font-size: x-small;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-  padding: 15px; /* Ajusta el relleno según sea necesario */
-  color: white;
+  position: relative;
   display: flex;
-  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+  flex-direction: column;
+  justify-content: center;
+  font-size: large;
+  height: 40px;
+  margin: 0;
+  z-index: 2;
+  color: white;
+}
+
+.mainFooter>div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  height: 40px;
+}
+
+#footerText {
+  margin-left: 25px;
+  margin-right: 35px;
+  display: flex;
+  width: 250px;
 }
 
 .mainFooter::after {
