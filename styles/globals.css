@@ -273,7 +273,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 3.5rem;
-    width: 80vw;
+    width: 75vw;
     height: auto;
     /*border: 3px solid rgb(255, 255, 255);*/
 }
@@ -375,6 +375,10 @@ body {
   box-sizing: border-box;
 }
 
+br {
+  margin-bottom: 10px;
+}
+
 /*#socialIcons {
     font-size: large;
     text-align: right;
@@ -426,5 +430,10 @@ body {
   width: 100%;
   height: auto; /* Mantiene la relación de aspecto */
   display: block; /* Elimina el espacio extra debajo de la imagen */
+  }
+
+  #separationBar2 {
+    border: 1px dashed white;
+    width: 100%;
   }
 }
