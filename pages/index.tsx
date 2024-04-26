@@ -99,7 +99,7 @@ const MiPagina = () => {
                 <div id="separationBar2"></div>
                 <br />
                 <p>
-                  Before we start. I want to thank the web designer and the art creator for making this idea possible and achieving it with me. With that said. lets begin by saying that BasedSoldiers is an idea that emerged two years ago. Back then. it wasnt pixel art. and it wasnt on the Base network as it didn't even exist. The art was of soldiers. and we even uploaded it to OpenSea. but there was no success at that time. Among the group of friends. the idea of releasing the sol-diet NFTs always persisted.
+                  Before we start. I want to thank the web designer and the art creator for making this idea possible and achieving it with me. With that said. lets begin by saying that BasedSoldiers is an idea that emerged two years ago. Back then. it wasnt pixel art. and it wasnt on the Base network as it didnt even exist. The art was of soldiers. and we even uploaded it to OpenSea. but there was no success at that time. Among the group of friends. the idea of releasing the sol-diet NFTs always persisted.
                   <br className="br"/>
                   <br />
                   Time moved on. and we acquired enough knowledge to develop the project property two years Later. Our team consists of three people:
