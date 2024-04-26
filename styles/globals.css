@@ -436,4 +436,8 @@ br {
     border: 1px dashed white;
     width: 100%;
   }
+
+  .contentScreenText {
+    font-size: 13.5px;
+  }
 }
