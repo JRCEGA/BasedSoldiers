@@ -190,6 +190,7 @@ a {
 a{
   text-decoration: none;
   color: inherit;
+  padding-left: 20px;
 }
 
 .mainHeader {
@@ -250,6 +251,13 @@ body {
   animation-name: cambioFondo;
   animation-duration: 10s; /* Duración total de la animación */
   animation-fill-mode: forwards; /* Se queda en la última imagen */
+  height: 100%;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .mainMenuContainer {
@@ -261,7 +269,8 @@ body {
   padding: 25px;
   font-size: x-large;
   width: 100vw;
-  height: auto;
+  min-height: calc(100vh - 140px);
+  border: solid 3px;
 }
 
 #menuPhrase {
@@ -274,7 +283,7 @@ body {
     flex-direction: row;
     gap: 3.5rem;
     width: 75vw;
-    height: auto;
+    height: 25vw;
     /*border: 3px solid rgb(255, 255, 255);*/
 }
 
@@ -299,6 +308,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  border: solid 3px;
 }
 
 .optionSelectorUI {
@@ -440,4 +450,5 @@ br {
   .contentScreenText {
     font-size: 13.5px;
   }
+
 }

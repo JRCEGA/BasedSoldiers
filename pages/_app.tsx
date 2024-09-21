@@ -3,6 +3,8 @@ import '@rainbow-me/rainbowkit/styles.css';
 import type { AppProps } from 'next/app';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { useRouter } from 'next/router';
+import Layout from '../components/Layout';
+
 
 import {
   RainbowKitProvider,
@@ -46,14 +48,16 @@ const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: AppProps) {
   const { locale } = useRouter() as { locale: Locale };
   return (
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider modalSize="compact" theme={darkTheme()} locale={locale}>
-          <Component {...pageProps} />
-          <SpeedInsights />
-        </RainbowKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
+      <WagmiProvider config={config}>
+        <QueryClientProvider client={queryClient}>
+          <RainbowKitProvider modalSize="compact" theme={darkTheme()} locale={locale}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+            <SpeedInsights />
+          </RainbowKitProvider>
+        </QueryClientProvider>
+      </WagmiProvider>
   );
 }
 
